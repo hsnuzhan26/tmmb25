@@ -26,7 +26,7 @@ function drawCard(name) {
   ctx.drawImage(template, 0, 0, canvas.width, canvas.height)
 
   ctx.fillStyle = '#FFFFFF'
-  ctx.font = '55px "Montserrat"
+  ctx.font = '60px "Montserrat"
   ctx.textAlign = 'center'
 
   ctx.fillText(name, canvas.width / 2, canvas.height / 3 + 750)
