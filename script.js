@@ -39,7 +39,7 @@ function drawCard(name) {
 
 downloadBtn.addEventListener('click', () => {
   const link = document.createElement('a')
-  link.download = 'ramadhan-card.png'
+  link.download = 'idulfitri.png'
   link.href = canvas.toDataURL('image/png')
   link.click()
 })
