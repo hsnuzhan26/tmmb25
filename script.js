@@ -7,6 +7,11 @@ const downloadBtn = document.getElementById('downloadBtn')
 const template = new Image()
 template.src = 'ucapan.png'
 
+const font = new FontFace('Montserrat', 'url(Montserrat-SemiBold.ttf)')
+font.load().then(f => {
+  document.fonts.add(f)
+})
+
 // tunggu gambar + font siap
 Promise.all([
   document.fonts.ready
