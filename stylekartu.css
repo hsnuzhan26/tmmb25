@@ -1,59 +1,116 @@
-body {
-  background: linear-gradient(
-    135deg,
-    #000000,
-    #0a1f44
-    );
+/* RESET */
+* {
+  box-sizing: border-box;
+}
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* BACKGROUND */
+body {
+  background: linear-gradient(135deg, #000000, #0a1f44);
   font-family: Arial, sans-serif;
 }
 
-.container {
-  max-width: 400px;
-  margin: 40px auto;
-  text-align: center;
-  background: linear-gradient(
-    to bottom,
-      #ffffff 0%,
-    #f5f5f5 45%,
-    #9ca3af 100%
-  );
-  padding: 20px;
-  border-radius: 8px;
-  font-family: Montserrat;
-}
-
-input {
-  width: 80%;
-  padding: 10px;
-  margin-bottom: 15px;
-  font-size: 16px;
-  font-family: Montserrat;
-  border-radius: 16px;
-}
-
-canvas {
-  width: 100%;
-  margin-bottom: 15px;
-  border-radius: 16px;
-}
-
-button {
-  padding: 10px;
-  width: 100%;
-  font-size: 16px;
-  cursor: pointer;
-  font-family: Montserrat;
-  border-radius: 16px;
-}
-
+/* HEADER */
 .page-header {
   text-align: center;
   margin: 20px 0;
 }
 
 .logo {
-  width: 220px;
+  width: 180px;
+  height: auto;
   opacity: 0.9;
-  height : auto;
+}
+
+/* CONTAINER */
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #f5f5f5 45%,
+    #9ca3af 100%
+  );
+
+  padding: 15px;
+  border-radius: 12px;
+  font-family: Montserrat;
+}
+
+/* INPUT */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+/* CANVAS (🔥 FIX UTAMA) */
+canvas {
+  width: 100%;
+  max-height: 60vh; /* biar ga kepanjangan di HP */
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  background: #111;
+  color: white;
+}
+
+/* 💻 LAPTOP MODE */
+@media (min-width: 768px) {
+  .container {
+    max-width: 700px;
+    padding: 25px;
+  }
+
+  canvas {
+    max-height: 70vh;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  input, button {
+    font-size: 16px;
+  }
+
+  .logo {
+    width: 220px;
+  }
+}
+
+/* 📱 HP KECIL */
+@media (max-width: 480px) {
+  .logo {
+    width: 140px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  canvas {
+    max-height: 55vh;
+  }
 }
