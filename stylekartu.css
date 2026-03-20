@@ -8,13 +8,23 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.container {
+body {
+  font-size: 16px;
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+}
+..container {
+  width: 90%;
   max-width: 400px;
   margin: 40px auto;
   text-align: center;
   background: linear-gradient(
     to bottom,
-      #ffffff 0%,
+    #ffffff 0%,
     #f5f5f5 45%,
     #9ca3af 100%
   );
@@ -30,6 +40,11 @@ input {
   font-size: 16px;
   font-family: Montserrat;
   border-radius: 16px;
+}
+
+input, button {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 canvas {
@@ -53,7 +68,22 @@ button {
 }
 
 .logo {
-  width: 220px;
-  opacity: 0.9;
-  height : auto;
+  width: 60%;
+  max-width: 220px;
+  height: auto;
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  input {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
 }
