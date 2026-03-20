@@ -13,18 +13,17 @@ font.load().then(f => {
   document.fonts.add(f)
 })
 
-// ✅ gambar dulu yang pasti ke-load
+// saat gambar siap
 template.onload = () => {
-  // ✅ set ukuran canvas
   canvas.width = template.width
   canvas.height = template.height
 
-  // ✅ tunggu font
   document.fonts.ready.then(() => {
     drawCard('')
   })
 }
 
+// input update
 input.addEventListener('input', () => {
   drawCard(input.value)
 })
@@ -38,11 +37,20 @@ function drawCard(name) {
   ctx.font = '60px "Montserrat"'
   ctx.textAlign = 'center'
 
-  // ✅ posisi lebih aman
   ctx.fillText(name, canvas.width / 2, canvas.height * 0.7)
 }
 
+// ✅ download fix (anti zonk di HP)
 downloadBtn.addEventListener('click', () => {
-  // HP friendly
-  window.open(canvas.toDataURL('image/png'))
+  canvas.toBlob(function(blob) {
+    const link = document.createElement('a')
+    link.href = URL.createObjectURL(blob)
+    link.download = 'ucapan.png'
+
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+
+    URL.revokeObjectURL(link.href)
+  }, 'image/png')
 })
