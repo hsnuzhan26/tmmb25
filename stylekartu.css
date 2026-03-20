@@ -17,20 +17,22 @@ body {
 /* HEADER */
 .page-header {
   text-align: center;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .logo {
-  width: 180px;
+  width: 160px;
   height: auto;
   opacity: 0.9;
 }
 
 /* CONTAINER */
 .container {
-  width: 90%;
-  max-width: 500px;
-  margin: 20px auto;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 12px;
+
   text-align: center;
 
   background: linear-gradient(
@@ -40,28 +42,31 @@ body {
     #9ca3af 100%
   );
 
-  padding: 15px;
-  border-radius: 12px;
-  font-family: Montserrat;
+  border-radius: 0; /* 🔥 biar full enak di HP */
+  min-height: 100dvh; /* 🔥 penting buat HP */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* INPUT */
 input {
   width: 100%;
   padding: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   font-size: 14px;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid #ccc;
 }
 
-/* CANVAS (🔥 FIX UTAMA) */
+/* 🔥 CANVAS FIX TOTAL */
 canvas {
   width: 100%;
-  max-height: 60vh; /* biar ga kepanjangan di HP */
-  object-fit: contain;
-  border-radius: 12px;
-  margin-bottom: 12px;
+  height: auto;
+  max-height: 50vh; /* 🔥 ini kunci biar ga kepotong */
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: block;
 }
 
 /* BUTTON */
@@ -69,30 +74,24 @@ button {
   width: 100%;
   padding: 10px;
   font-size: 14px;
-  border-radius: 12px;
+  border-radius: 10px;
   cursor: pointer;
   border: none;
   background: #111;
   color: white;
 }
 
-/* 💻 LAPTOP MODE */
+/* 💻 LAPTOP */
 @media (min-width: 768px) {
   .container {
     max-width: 700px;
-    padding: 25px;
+    border-radius: 12px;
+    margin: 20px auto;
+    padding: 20px;
   }
 
   canvas {
     max-height: 70vh;
-  }
-
-  h2 {
-    font-size: 26px;
-  }
-
-  input, button {
-    font-size: 16px;
   }
 
   .logo {
@@ -100,17 +99,18 @@ button {
   }
 }
 
-/* 📱 HP KECIL */
+/* 📱 HP (🔥 bersihin biar lega) */
 @media (max-width: 480px) {
-  .logo {
-    width: 140px;
+  .page-header {
+    display: none; /* 🔥 ini penting banget */
   }
 
   h2 {
     font-size: 18px;
+    margin-bottom: 10px;
   }
 
   canvas {
-    max-height: 55vh;
+    max-height: 45vh;
   }
 }
